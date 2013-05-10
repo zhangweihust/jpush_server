@@ -1,10 +1,8 @@
 package cn.jpush.example;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-
 
 import com.zhangwei.common.StorageManager;
 
@@ -18,8 +16,11 @@ public class MessageManager {
 	
 	/**********************************************************/
 	public NotifyInfo notify;
+	public NotifyCondition condition;
 	public ArrayList<PushMessage> MsgList;
 	/**********************************************************/
+	
+	
 	public static MessageManager getInstance(){
 		if(ins==null){
 			MessageManager a =  (MessageManager) StorageManager.getInstance().getItem(
@@ -37,6 +38,7 @@ public class MessageManager {
 	private MessageManager(){
 		MsgList = new ArrayList<PushMessage>();
 		notify = new NotifyInfo();
+		condition = new NotifyCondition();
 	};
 	
 	public MessageManager addMessage(PushMessage pMsg){

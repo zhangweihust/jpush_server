@@ -75,6 +75,10 @@ public class JpushClientExample {
 		MessageManager.getInstance().notify.status_info = "status_info";
 		MessageManager.getInstance().notify.title = "title";
 		
+		MessageManager.getInstance().condition.type = 1;
+		MessageManager.getInstance().condition.assetID = "123456";
+		MessageManager.getInstance().condition.videoname = "video_name";
+		
 		PushMessage pMsg = new PushMessage();
 		pMsg.bitmap_url = "http://os.blog.163.com/common/ava.s?host=zhuowh2006@126&b=0&r=1291718794062";
 		pMsg.type = 1;
