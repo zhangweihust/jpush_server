@@ -70,8 +70,13 @@ public class JpushClientExample {
 	}
 	
 	private static void sendMsg(){
+		MessageManager.getInstance().notify.sendnotify = true;
+		MessageManager.getInstance().notify.info = "info";
+		MessageManager.getInstance().notify.status_info = "status_info";
+		MessageManager.getInstance().notify.title = "title";
+		
 		PushMessage pMsg = new PushMessage();
-		pMsg.bitmap_url = "http://1234/56we/kdji.jpg";
+		pMsg.bitmap_url = "http://os.blog.163.com/common/ava.s?host=zhuowh2006@126&b=0&r=1291718794062";
 		pMsg.type = 1;
 		pMsg.info = "本周来了一批新的电影，哈哈";
 		pMsg.title = "自定义消息";
@@ -84,10 +89,7 @@ public class JpushClientExample {
 		System.out.println("客户端发送数据: " + msg_context);
 		MessageResult msgResult = jpush.sendCustomMessageWithAppKey(104, "custorm msg2", msg_context);//
 
-		MessageManager.getInstance().notify.sendnotify = true;
-		MessageManager.getInstance().notify.info = "info";
-		MessageManager.getInstance().notify.status_info = "status_info";
-		MessageManager.getInstance().notify.title = "title";
+
 		
 		if (null != msgResult) {
 			System.out.println("服务器返回数据: " + msgResult.toString());
