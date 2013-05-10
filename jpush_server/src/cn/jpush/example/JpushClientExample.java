@@ -84,6 +84,10 @@ public class JpushClientExample {
 		System.out.println("客户端发送数据: " + msg_context);
 		MessageResult msgResult = jpush.sendCustomMessageWithAppKey(104, "custorm msg2", msg_context);//
 
+		MessageManager.getInstance().notify.sendnotify = true;
+		MessageManager.getInstance().notify.info = "info";
+		MessageManager.getInstance().notify.status_info = "status_info";
+		MessageManager.getInstance().notify.title = "title";
 		
 		if (null != msgResult) {
 			System.out.println("服务器返回数据: " + msgResult.toString());

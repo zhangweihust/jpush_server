@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
+
 import com.zhangwei.common.StorageManager;
 
 
@@ -16,6 +17,7 @@ public class MessageManager {
 
 	
 	/**********************************************************/
+	public NotifyInfo notify;
 	public ArrayList<PushMessage> MsgList;
 	/**********************************************************/
 	public static MessageManager getInstance(){
@@ -34,6 +36,7 @@ public class MessageManager {
 	
 	private MessageManager(){
 		MsgList = new ArrayList<PushMessage>();
+		notify = new NotifyInfo();
 	};
 	
 	public MessageManager addMessage(PushMessage pMsg){
@@ -44,6 +47,7 @@ public class MessageManager {
 	
 	public MessageManager addMessageList(MessageManager pMsgList){
 		MsgList.addAll(pMsgList.MsgList);
+		notify = pMsgList.notify;
 		autoClean();
 		return ins;
 	}
