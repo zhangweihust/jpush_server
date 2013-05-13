@@ -72,19 +72,19 @@ public class JpushClientExample {
 	
 	private static void sendMsg4(){
 		MessageManager.getInstance().notify.sendnotify = true;
-		MessageManager.getInstance().notify.info = "预置的影片1将于某日某时下线";
-		MessageManager.getInstance().notify.status_info = "预置的影片1将于某日某时下线，请尽快观看";
-		MessageManager.getInstance().notify.title = "预置的影片1";
+		MessageManager.getInstance().notify.info = "预置的影片123x将于某日某时下线";
+		MessageManager.getInstance().notify.status_info = "预置的影片123x将于某日某时下线，请尽快观看";
+		MessageManager.getInstance().notify.title = "预置的影片123x";
 		
 		MessageManager.getInstance().condition.type = 1;
-		MessageManager.getInstance().condition.assetID = "123111";
-		MessageManager.getInstance().condition.videoname = "预置的影片1";
+		MessageManager.getInstance().condition.assetID = "123x";
+		MessageManager.getInstance().condition.videoname = "预置的影片123x";
 		
 		PushMessage pMsg = new PushMessage();
 		pMsg.bitmap_url = "http://img1.gtimg.com/sports/pics/hv1/125/235/1323/86088125.jpg";
 		pMsg.type = 0;
-		pMsg.info = "预置的影片1将于某日某时下线，请您尽快观赏";
-		pMsg.title = "222陈晓做客";
+		pMsg.info = "预置的影片123x将于某日某时下线，请您尽快观赏";
+		pMsg.title = "123x陈晓做客";
 		pMsg.time = System.currentTimeMillis();
 		
 		MessageManager.getInstance().addMessage(pMsg);
